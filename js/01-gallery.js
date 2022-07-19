@@ -30,7 +30,7 @@ gallery.addEventListener("click", (e) => {
     (el) => el.original === e.target.getAttribute("data-source")
   );
 
-  const instance = basicLightbox.create(template(item), {
+  const instance = basicLightbox.create(template({...item, preview: item.original }), {
     onShow: () => {
       document.addEventListener("keydown", closeByEscape);
     },
